@@ -1,0 +1,7 @@
+/node_modules
+
+/build
+
+
+# mac 缓存文件
+.DS_Store
