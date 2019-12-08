@@ -2,10 +2,13 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     // 入口
     entry: {
         index: './lib/index.tsx'
+    },
+    resolve: {
+        extensions: ['.ts','.tsx','.jsx','.js']
     },
     // 输出
     output: {
@@ -29,4 +32,20 @@ module.exports = {
             template: 'index.html'
         })
     ],
+    // 避免打包外部的库
+    // externals: {
+    //     'react': {
+    //         commonjs: 'react',
+    //         commonjs2:'react',
+    //         amd: 'react',
+    //         root: 'React'
+    //     },
+    //     'react-dom': {
+    //         commonjs: 'react-dom',
+    //         commonjs2:'react-dom',
+    //         amd: 'react-dom',
+    //         root: 'React-Dom'
+    //     }
+        
+    // }
 }
